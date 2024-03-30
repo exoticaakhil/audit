@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+body {
+  background: linear-gradient(120deg, #b4a3a3, #a29999, #716161, #5a4e4e);
+}
+ html {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+
+
+.card {
+  perspective: 1000px;
+}
+
+.card:hover .card-body {
+  transform: rotateY(180deg);
+}
+
+.card .card-body {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.card .card-body > * {
+  transform: rotateY(180deg);
+}
+
+.card .card-body img.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card .card-body {
+    background-color: #b4a3a3;
+  color: #212529; /* Text color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-body h5.card-title {
+  font-size: 1.25rem;
+}
+
+.card .card-body p.card-text {
+  font-size: 1rem;
+}
+
+.card .card-body small.text-muted {
+  font-size: 0.875rem;
+}
+.footer {
+  width: 100%;
+  background-color: black;
+}
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.footer .col h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 17px;
+  padding: 10px 0;
+  color: #FF0063;
+  text-transform: uppercase;
+}
+.footer .col ul {
+  list-style-type: none;
+  padding: 0;
+}
+.footer .col ul li {
+  color: white;
+  font-size: 12px;
+  padding: 5px 0px;
+}
+.address ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  cursor: pointer;
+  color: lightgray;
+  font-weight: bold;
+}
+.clearfix {
+  clear: both;
+}
+@media only screen and (min-width: 1280px) {
+  .contain {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1139px) {
+  .contain .address {
+    width: 1000px;
+    display: block;
+  }
+  .address h2 {
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .footer .col {
+    width: 33%;
+  }
+  .footer .col h2 {
+    font-size: 14px;
+  }
+  .footer .col ul li {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 500px) {
+    .footer .col {
+      width: 50%;
+    }
+    .footer .col h2 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+}
+@media only screen and (max-width: 340px) {
+  .footer .col {
+    width: 100%;
+  }
+}
+
+
+
+    </style>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{% url 'index' %}" ><span style="font-family:Cursive">Audit</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto"  >
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'features' %}" style="font-family:Cursive">Features</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#" style="font-family:Cursive">Demo</a>
+            </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family:Cursive">
+                 Blog
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+      
+            <li class="nav-item active">
+                <a class="nav-link" href="#" style="font-family:Cursive">About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#" style="font-family:Cursive">Contact</a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#" style="font-family:Cursive">Trail</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+     
+      {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="footer">
+          <div class="contain">
+          <div class="col">
+            <h2>Company</h2>
+            <ul>
+              <li>About us</li>
+              <li> Our Mission</li>
+              <li>Services</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Products</h2>
+            <ul>
+              <li>SEO</li>
+              <li>Content Development</li>
+              <li>Digital Marketing</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Team</h2>
+            <ul>
+              <li>HR Team</li>
+              <li>Finance Team</li>
+              <li>Content Team</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Resources</h2>
+            <ul>
+              <li>Webmail</li>
+              <li>Web templates</li>
+              <li>Email templates</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Contact</h2>
+            <ul>
+              <li>+91 9051 XXXXXX</li>
+              <li>033 2464 XXXX</li>
+              <li>abc@gmail.com</li>
+            </ul>
+          </div>
+          <div class="col address">
+            <h2>Address </h2>
+            <ul>
+              <li>Sky Towers, Service Road, Kolkata</li>
+          </ul>
+          </div>
+        <div class="clearfix"></div>
+        </div>
+        </div>
+        </footer>
+        
+    
+</body>
+</html>
