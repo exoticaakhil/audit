@@ -1,0 +1,186 @@
+{% extends 'navbase.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .contact .info {
+
+  padding: 30px;
+
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.contact .info i {
+  font-size: 20px;
+  color: #47b2e4;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #e7f5fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #37517e;
+}
+
+.contact .info p {
+  padding: 0 0 10px 60px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #0c60f1;
+}
+
+.contact .info .email p {
+  padding-top: 5px;
+}
+
+.contact .info .social-links {
+  padding-left: 60px;
+}
+
+.contact .info .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+
+.contact .info .social-links a:hover {
+
+  color: #fff;
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+  background: #47b2e4;
+  color: #f70505;
+}
+.contact-form {
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+    width: auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+<br>
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2  style="font-family: cursive;text-align: center;">Contact</h2>
+        
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="info">
+            <div class="address">
+                <i class="fa-solid fa-location-dot"></i>
+              <h4>Location:</h4>
+              <p>Sky Towers, Service Road, Kochi</p>
+            </div>
+
+            <div class="email">
+                <i class="fa-solid fa-envelope"></i>
+              <h4>Email:</h4>
+              <p>abc@gmail.com</p>
+            </div>
+
+            <div class="phone">
+                <i class="fa-solid fa-phone"></i>
+              <h4>Call:</h4>
+              <p>+91 9051 XXXXXX</p>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6 mt-4 mt-lg-0 d-flex align-items-stretch">
+            <form action="" method="post" class="contact-form">
+                {% csrf_token %}
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" class="form-control" required><br><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required><br><br>
+        
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required><br><br>
+        
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" class="form-control" rows="4" cols="50"></textarea><br><br>
+        
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div>
+        
+      </div>
+
+    </div>
+  </section>
+  <br>
+{% endblock %}

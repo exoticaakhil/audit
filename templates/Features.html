@@ -3,68 +3,20 @@
 {% load static %}
 <style>
     .card {
-  perspective: 1000px;
+ 
   background-color: #b4a3a3;
 }
 
-.card:hover .card-body {
-  transform: rotateY(180deg);
-  
-}
 
-.card .card-body {
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  background-color: #b4a3a3;
-}
-
-.card .card-body > * {
-  transform: rotateY(180deg);
-  
-}
-
-.card .card-body img.card-img-top {
-  width: 100%;
-  height: auto;
-}
-
-.card .card-body {
-    background-color: #b4a3a3;
-  color: #212529; /* Text color */
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card .card-body h5.card-title {
-  font-size: 1.25rem;
-}
-
-.card .card-body p.card-text {
-  font-size: 1rem;
-}
-
-.card .card-body small.text-muted {
-  font-size: 0.875rem;
-}
-
-.card:hover .card-body1 {
-  transform: rotatex(180deg);
-  
-}
 
 .card .card-body1 {
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
+
+ 
   backface-visibility: hidden;
   background-color: #b4a3a3;
 }
 
-.card .card-body1 > * {
-  transform: rotatex(180deg);
-  
-}
+
 
 .card .card-body1 img.card-img-top {
   width: 100%;
@@ -93,36 +45,88 @@
 
 
 
+.card .card-body1 {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background-color: #b4a3a3;
+}
+
+
+
+.card .card-body1 img.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card .card-body1 {
+    background-color: #b4a3a3;
+  color: #212529; /* Text color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-body1 h5.card-title {
+  font-size: 1.25rem;
+}
+
+.card .card-body1 p.card-text {
+  font-size: 1rem;
+}
+
+.card .card-body1 small.text-muted {
+  font-size: 0.875rem;
+}
+.clients_section {
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+    padding-bottom: 90px;
+}
+    /* Custom styles */
+    .card-body1 p {
+      opacity: 0; /* Initially hide the paragraph content */
+      transition: opacity 0.5s ease; /* Add transition for opacity */
+    }
+
+    .card:hover .card-body1 p {
+      opacity: 1; /* Fade in the paragraph content on hover */
+    }
+
+
+
     </style>
 <br>
 <br>
 <br>
 <h1 style="font-family: cursive;text-align: center;">Features And Benefits</h1>
+
   <div class="card-deck" style="margin-top: 2%; margin-left: 2%; margin-right: 2%;">
-    <div class="card">
+    <div class="card" >
         <img class="card-img-top w-25 square-pill mx-auto d-block" src="{% static 'images/re.png' %}" alt="Card image cap"  >
-      <div class="card-body">
+      <div class="card-body1">
         
-        <h5 class="card-title" style="font-family:Cursive">Reporting</h5>
-        <p class="card-text">Reporting options. Auditing software should provide audit closure and reporting options. Generated audit reports must enable analysis of audit results</p>
+        <h5 class="card-title1" style="font-family:Cursive;margin-top: 16px;">Reporting</h5>
+        <p class="card-text1">Reporting options. Auditing software should provide audit closure and reporting options. Generated audit reports must enable analysis of audit results</p>
        
       </div>
     </div>
     <div class="card">
         <img class="card-img-top w-25 square-pill mx-auto d-block" src="{% static 'images/check.png' %}" alt="Card image cap">
-      <div class="card-body">
+      <div class="card-body1">
        
-        <h5 class="card-title" style="font-family:Cursive">Audit checklists</h5>
-        <p class="card-text">Users should be able to generate new audit checklists using auditing software before and during the auditing process..</p>
+        <h5 class="card-title1" style="font-family:Cursive">Audit checklists</h5>
+        <p class="card-text1">Users should be able to generate new audit checklists using auditing software before and during the auditing process..</p>
         
       </div>
     </div>
     <div class="card">
         <img class="card-img-top w-25 square-pill mx-auto d-block" src="{% static 'images/audit-icon.png' %}" alt="Card image cap">
-      <div class="card-body">
+      <div class="card-body1">
       
-        <h5 class="card-title" style="font-family:Cursive">Audit Analytics</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <h5 class="card-title1" style="font-family:Cursive;margin-top: 10px;">Audit Analytics</h5>
+        <p class="card-text1">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       
       </div>
     </div>
@@ -132,35 +136,36 @@
         <img class="card-img-top w-25 square-pill mx-auto d-block" src="{% static 'images/mang.png' %}" alt="Card image cap"  >
       <div class="card-body1">
         
-       
-        <p class="card-text">Management is the administration of organizations, whether they are a business, a nonprofit organization, or a government body through business administration, nonprofit management, or the political science sub-field of public administration respectively</p>
         <h5 class="card-title" style="font-family:Cursive">Management</h5>
+        <p class="card-text">Management is the administration of organizations, whether they are a business, a nonprofit organization, or a government body through business administration, nonprofit management, or the political science sub-field of public administration respectively</p>
+        
       </div>
     </div>
     <div class="card">
         <img class="card-img-top w-25 square-pill mx-auto d-block" src="{% static 'images/planning.png' %}" alt="Card image cap"  >
       <div class="card-body1">
         
-       
-        <p class="card-text">  Planning is a crucial step in performing an audit; this process requires extra preparation and fully depends on the quality of the plan, how simple it will be to create
+        <h5 class="card-title" style="font-family:Cursive;margin-top: 36px;">Planning tools</h5>
+        <p class="card-text">  Planning is a crucial step in performing an audit; this process requires extra preparation and fully depends on the quality of the plan,how simple it will be to create
             <br>
             <br>
-            <br>    
+         
+               
         </p>
-        <h5 class="card-title" style="font-family:Cursive">Planning tools</h5>
+        
       </div>
     </div>
     <div class="card">
         <img class="card-img-top w-25 square-pill mx-auto d-block" src="{% static 'images/sta.png' %}" alt="Card image cap"  >
       <div class="card-body1">
         
-       
+        <h5 class="card-title" style="font-family:Cursive">Statistics</h5>
         <p class="card-text">Statistics is the discipline that concerns the collection, organization, analysis, interpretation, and presentation of data. In applying statistics to a scientific, industrial, or social problem
             <br>
             <br>
             <br>
         </p>
-        <h5 class="card-title" style="font-family:Cursive">Statistics</h5>
+        
       </div>
     </div>
   </div>

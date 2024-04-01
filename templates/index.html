@@ -1,7 +1,11 @@
 {% extends 'navbase.html' %}
 {% block content %}
 {% load static %}
+
 <style>
+  body{
+    margin: 0%;
+  }
     .d-block {
   display: block !important;
 }
@@ -9,15 +13,15 @@
 .w-50 {
   width: 50% !important;
 }
-.carousel-inner .carousel-item {
+.ca-in .ca-it {
   transition: opacity 1s ease-in-out; /* Add a transition for opacity */
 }
 
-.carousel-inner .carousel-item.active {
+.ca-in .ca-it.active {
   opacity: 1; /* Set the opacity of the active slide to 1 */
 }
 
-.carousel-inner .carousel-item:not(.active) {
+.ca-in .ca-it:not(.active) {
   opacity: 0; /* Set the opacity of non-active slides to 0 */
 }
 .fixed-text{
@@ -41,14 +45,334 @@
         text-shadow: 0 0 20px #eeeeee, 0 0 30px #94677d, 0 0 40px #94677d, 0 0 50px #94677d, 0 0 60px #94677d, 0 0 70px #94677d, 0 0 80px #94677d;
       }
     }
+    @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .text-right {
+    text-align: center;
+  }
+
+  .cd {
+    text-align: center;
+    border-radius: 50%;
+    width: 200px; /* Adjust the size as needed */
+    height: 200px; /* Adjust the size as needed */
+    
+  }
+  .wave {
+    display: inline-block;
+    animation: wave 0.5s infinite alternate;
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .text-center {
+    text-align: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 2%;
+  }
+  
+  .box {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 2px solid #af1e1e; /* Border properties */
+    border-radius: 30px; /* Border radius */
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent white */
+}
+
+  .text-center:hover {
+    animation: move 0.5s ease infinite alternate;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-5px);
+    }
+  }
+
+
+
+  .centered-text {
+ 
+    top: 50%;
+    left: 50%;
+   
+    color: rgb(4, 4, 4);
+    font-size: 19px;
+    margin-top: 5%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .jumping-image {
+    animation: jump 0.5s infinite alternate;
+  }
+
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px); /* Adjust the jump height as needed */
+    }
+  }
+  .team .member {
+  position: relative;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 5px;
+
+  transition: 0.5s;
+  height: 100%;
+}
+
+.team .member .pic {
+  overflow: hidden;
+  width: 180px;
+  border-radius: 50%;
+}
+
+.team .member .pic img {
+  transition: ease-in-out 0.3s;
+}
+
+.team .member:hover {
+  transform: translateY(-10px);
+}
+
+.team .member .member-info {
+  padding-left: 30px;
+}
+
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #071f48;
+}
+
+.team .member span {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+}
+
+.team .member span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #071f48;
+  bottom: 0;
+  left: 0;
+}
+
+.team .member p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.team .member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.team .member .social a {
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+
+}
+
+.team .member .social a i {
+  color: #071f48;
+  font-size: 26px;
+  margin: 0 2px;
+}
+
+.team .member .social a:hover {
+  background: #47b2e4;
+}
+
+.team .member .social a:hover i {
+  color: #fff;
+}
+
+.team .member .social a+a {
+  margin-left: 8px;
+}
+.carousel-item .imm {
+      width: 80%;
+      height: 500px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .carousel-item {
+      transition: transform 1s ease;
+    }
+
+    .carousel-item.active {
+      transform: scale(1.1);
+    }
+    *{
+      margin: 0%;
+    }
 
 </style>
+<script>
+  // JavaScript to add the 'wave' class to each letter
+  const letters = document.querySelectorAll('h1 span');
+  letters.forEach(letter => {
+    letter.classList.add('wave');
+  });
+  
+</script>
 <br>
 <br>
 <h5 class="display-3 glow">We help Chartered Accountants To unlock their true potential</h5>
 <br>
 <br>
 
+
+<div>
+  <h1 class="h1">
+    <span class="wave">W</span>
+    <span class="wave">e</span>
+    <span class="wave">l</span>
+    <span class="wave">c</span>
+    <span class="wave">o</span>
+    <span class="wave">m</span>
+    <span class="wave">e</span>
+    <span class="wave"> </span>
+    <span class="wave">T</span>
+    <span class="wave">o</span>
+    <span class="wave"> </span>
+    <span class="wave">T</span>
+    <span class="wave">h</span>
+    <span class="wave">e</span>
+    <span class="wave"> </span>
+    <span class="wave">W</span>
+    <span class="wave">o</span>
+    <span class="wave">r</span>
+    <span class="wave">l</span>
+    <span class="wave">d</span>
+    <span class="wave"> </span>
+    <span class="wave">o</span>
+    <span class="wave">f</span>
+    <span class="wave"> </span>
+    <span class="wave">A</span>
+    <span class="wave">u</span>
+    <span class="wave">d</span>
+    <span class="wave">i</span>
+    <span class="wave">t</span>
+  </h1>
+</div>
+<br>
+<h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: center;">Get Your 7-Day Free Trial Now!</h1>
+<p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: center;">Start your trial today  <br> Click the below button.</p>
+
+
+  <div class="text-center">
+    <div class="box"><a href="{% url 'price' %}" style="color: #fb0505;text-decoration: none;font-family: monospace;">Free Trail</a> </div>
+  </div>
+<br>
+<br>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="  d-block mx-auto imm" src="{% static 'images/audit111.png' %}" alt="First slide" height="70%">
+      
+       
+
+    </div>
+  
+    <div class="carousel-item">
+      <img class=" d-block mx-auto imm" src="{% static 'images/gggg.jpg' %}" alt="Second slide" height="70%">
+      
+
+
+      </div>
+   
+    <div class="carousel-item">
+      <img class=" d-block mx-auto imm" src="{% static 'images/imhh.jpg' %}" alt="Third slide" height="70%">
+      
+
+
+      </div>
+
+    <div class="carousel-item">
+      <img class=" d-block mx-auto imm" src="{% static 'images/ccc.avif' %}" alt="Fourth slide" height="70%">
+      
+
+
+      </div>
+  
+    <div class="carousel-item">
+      <img class=" d-block mx-auto imm" src="{% static 'images/333.jpg' %}" alt="Fifth slide" height="70%">
+      
+
+        
+    </div>
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+
+<img src="{% static 'images/audd.jpg' %}" class=" cd mx-auto d-block jumping-image " alt="..." style="margin-top: 20px">
+
+
+<div class="text-center mr-12" >
+ 
+    <div class="centered-text">
+
+          What It Means in Finance and Accounting, and 3 Main Types
+      There are three main types of audits: external audits, internal audits, and Internal Revenue Service audits,External audits are commonly performed by Certified Public Accounting firms</div>
+        </div>
+     
+      </div>
+      <br>
+<br>
+<br>
 
 
 
@@ -62,23 +386,23 @@
           <p style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">independent examination of financial information of any entity, whether profit oriented or not, irrespective of its size or legal form when such an examination is conducted with a view to express an opinion thereon.</p>
         </div>
       </div>
-      
+       
       <!-- Right side with carousel -->
       <div class="col-lg-8">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+          <div class="carousel-inner ca-in">
+            <div class="carousel-item  ca-it active">
               <img class="d-block w-100" src="{% static 'images/img1.png' %}" alt="First slide">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ca-it">
               <img class="d-block w-100" src="{% static 'images/img2.png' %}" alt="Second slide">
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ca-it">
               <img class="d-block w-100" src="{% static 'images/img3.jpg' %}" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-           
+       
             <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
@@ -90,6 +414,92 @@
     </div>
   </div>
   
-  
+
 <br>
+<section id="team" class="team section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2 style="text-align: center;">Team</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="member d-flex align-items-start">
+          <div class="pic"><img src="{% static 'images/cao.png' %}" class="img-fluid" alt=""></div>
+          <div class="member-info">
+            <h4>Walter White</h4>
+            <span>CA Officer</span>
+            <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+            <div class="social">
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+              <a href=""> <i class="fa-brands fa-linkedin-in"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+        <div class="member d-flex align-items-start">
+          <div class="pic"><img src="{% static 'images/cao2.png' %}" class="img-fluid" alt=""></div>
+          <div class="member-info">
+            <h4>Sarah Jhonson</h4>
+            <span>jr CA</span>
+            <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+            <div class="social">
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+              <a href=""> <i class="fa-brands fa-linkedin-in"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="member d-flex align-items-start">
+          <div class="pic"><img src="{% static 'images/ca.jpg' %}" class="img-fluid" alt=""></div>
+          <div class="member-info">
+            <h4>William Anderson</h4>
+            <span>Sr Accountant</span>
+            <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+            <div class="social">
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+              <a href=""> <i class="fa-brands fa-linkedin-in"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="member d-flex align-items-start">
+          <div class="pic"><img src="{% static 'images/jrac.jpg' %}" class="img-fluid" alt=""></div>
+          <div class="member-info">
+            <h4>Amanda Jepson</h4>
+            <span>Accountant</span>
+            <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+            <div class="social">
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+              <a href=""> <i class="fa-brands fa-linkedin-in"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<br>
+
+
 {% endblock %}

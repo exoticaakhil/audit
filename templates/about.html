@@ -1,0 +1,341 @@
+{% extends 'navbase.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .about .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-left: 28px;
+  position: relative;
+}
+
+.about .content ul li+li {
+  margin-top: 10px;
+}
+
+.about .content ul i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 20px;
+  color: #071f48;
+  line-height: 1;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .content .btn-learn-more {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 4px;
+  transition: 0.3s;
+  line-height: 1;
+  color: #071f48;
+  animation-delay: 0.8s;
+  margin-top: 6px;
+  border: 2px solid #071f48;
+}
+
+.about .content .btn-learn-more:hover {
+ 
+  color: #fff;
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us .content {
+  padding: 60px 100px 0 100px;
+}
+
+.why-us .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+  color: #37517e;
+}
+
+.why-us .content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.why-us .content p {
+  font-size: 15px;
+  color: #09327a;
+}
+
+.why-us .img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.why-us .accordion-list {
+  padding: 0 100px 60px 100px;
+}
+
+.why-us .accordion-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.why-us .accordion-list li+li {
+  margin-top: 15px;
+}
+
+.why-us .accordion-list li {
+  padding: 20px;
+
+  border-radius: 4px;
+}
+
+.why-us .accordion-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding-right: 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.why-us .accordion-list span {
+  color: #071f48;
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.why-us .accordion-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.why-us .accordion-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.why-us .accordion-list .icon-show {
+  display: none;
+}
+
+.why-us .accordion-list a.collapsed {
+  color: #343a40;
+}
+
+.why-us .accordion-list a.collapsed:hover {
+  color: #0a0b0b;
+}
+
+.why-us .accordion-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.why-us .accordion-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+
+  .why-us .content,
+  .why-us .accordion-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .why-us .img {
+    min-height: 400px;
+  }
+
+  .why-us .content {
+    padding-top: 30px;
+  }
+
+  .why-us .accordion-list {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .why-us .img {
+    min-height: 200px;
+  }
+}
+
+</style>
+<script>
+    // Get the modal element
+    var modal = document.getElementById("myModal");
+
+    // Get the Learn More link
+    var link = document.querySelector(".btn-learn-more");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the Learn More link, open the modal
+    link.addEventListener("click", function() {
+      modal.style.display = "block";
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    span.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.addEventListener("click", function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+<br>
+<br>
+<br>
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2 style="font-family: cursive;">About Us</h2>
+      </div>
+      <div class="row content">
+        <div class="col-lg-6">
+          <p>
+             it's simple to describe what we make: an app you can use to build trust, close deals, and generate more revenue. We built this app because we were tired of wasting hours of time—and spending hundreds of dollars—trying to make good looking audit reports that we could share with our prospects and clients.
+          </p>
+          <ul>
+            <li><i class="fa-solid fa-check-double"></i> Success is a virtuous circle</li>
+            <li><i class="fa-solid fa-check-double"></i> Excellence is imperative</li>
+            <li><i class="fa-solid fa-check-double"></i> There's more than enough for everyone</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+          <p>
+            “You will get all you want in life, if you help enough other people get what they want”.
+
+            And with our websites, you have a tool to do exactly thatUse the growth insights you'll find in our audit report to GIVE prospects and clients what they need to succeed online…. They'll come to know, like, trust and recommend you. And then you'll be well on the way to success yoursel.
+          </p>
+          <a href="#" class="btn-learn-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal" >
+    <div class="modal-content" style="   background: linear-gradient(120deg, #f3cece, #b89d9d, #a99b9b, #f3cece);">
+      <span class="close">&times;</span>
+      <p style="   background: linear-gradient(120deg, #f3cece, #b89d9d, #a99b9b, #f3cece); margin-left: 3%;"><b>Success is a virtuous circle</b><br>
+        In the realm of audit, success forms a virtuous circle wherein meticulous attention to detail, thorough analysis, and unwavering integrity pave the path for continuous improvement and trust-building. A successful audit not only ensures compliance with regulations and standards but also enhances organizational efficiency and effectiveness. <br>
+        <b>Excellence is imperative</b><br>
+       
+Excellence is not just desirable but imperative in the realm of audit. Auditing serves as the bedrock of trust in financial reporting, ensuring accuracy, transparency, and compliance with regulatory standards. Without excellence in auditing practices, stakeholders risk financial mismanagement, fraud, and systemic failures.  <br>
+<b>There's more than enough for everyone</b><br>
+       
+In the realm of audit, the principle that "there's more than enough for everyone" serves as a guiding beacon. Audits are not merely about uncovering deficiencies or discrepancies; they are a means to ensure fairness, transparency, and accountability within systems. </p>
+    </div>
+  </div>
+    
+  </section>
+  <section id="why-us" class="why-us section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+          <div class="content">
+            <h3>What We Are In <strong>"Audit"</strong></h3>
+            <p>
+                processes are integral components of ensuring compliance, security, and operational efficiency within digital environments
+            </p>
+          </div>
+
+          <div class="accordion-list">
+            <ul>
+              <li>
+                <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1" style="color: #0a0b0b;"><span>01</span> Automated Data Collection and Analysis</a>
+                <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                  
+                </div>
+              </li>
+
+              <li>
+                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Customizable Audit Trails </a>
+                <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                  
+                </div>
+              </li>
+
+              <li>
+                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Compliance Management and Reporting: </a>
+                <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                 
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url({% static 'images/audit.avif' %});' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+      </div>
+
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the modal element
+      var modal = document.getElementById("myModal");
+
+      // Get the Learn More link
+      var learnMoreLink = document.querySelector(".btn-learn-more");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on the Learn More link, open the modal
+      learnMoreLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        modal.style.display = "block";
+      });
+
+      // When the user clicks on <span> (x), close the modal
+      span.addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+{% endblock %}
