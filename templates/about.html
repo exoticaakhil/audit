@@ -52,7 +52,7 @@
 
 .about .content .btn-learn-more:hover {
  
-  color: #fff;
+  color: #c73131;
   text-decoration: none;
 }
 
@@ -186,78 +186,48 @@
 }
 
 </style>
-<script>
-    // Get the modal element
-    var modal = document.getElementById("myModal");
 
-    // Get the Learn More link
-    var link = document.querySelector(".btn-learn-more");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the Learn More link, open the modal
-    link.addEventListener("click", function() {
-      modal.style.display = "block";
-    });
-
-    // When the user clicks on <span> (x), close the modal
-    span.addEventListener("click", function() {
-      modal.style.display = "none";
-    });
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.addEventListener("click", function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    });
-  </script>
 <br>
 <br>
 <br>
 <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
-      <div class="section-title">
-        <h2 style="font-family: cursive;">About Us</h2>
-      </div>
-      <div class="row content">
-        <div class="col-lg-6">
-          <p>
-             it's simple to describe what we make: an app you can use to build trust, close deals, and generate more revenue. We built this app because we were tired of wasting hours of time—and spending hundreds of dollars—trying to make good looking audit reports that we could share with our prospects and clients.
-          </p>
-          <ul>
-            <li><i class="fa-solid fa-check-double"></i> Success is a virtuous circle</li>
-            <li><i class="fa-solid fa-check-double"></i> Excellence is imperative</li>
-            <li><i class="fa-solid fa-check-double"></i> There's more than enough for everyone</li>
-          </ul>
-        </div>
-        <div class="col-lg-6 pt-4 pt-lg-0">
-          <p>
-            “You will get all you want in life, if you help enough other people get what they want”.
-
-            And with our websites, you have a tool to do exactly thatUse the growth insights you'll find in our audit report to GIVE prospects and clients what they need to succeed online…. They'll come to know, like, trust and recommend you. And then you'll be well on the way to success yoursel.
-          </p>
-          <a href="#" class="btn-learn-more">Learn More</a>
-        </div>
-      </div>
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2 style="font-family: cursive;">About Us</h2>
     </div>
-  </section>
-
-  <!-- Modal -->
-  <div id="myModal" class="modal" >
-    <div class="modal-content" style="   background: linear-gradient(120deg, #f3cece, #b89d9d, #a99b9b, #f3cece);">
-      <span class="close">&times;</span>
-      <p style="   background: linear-gradient(120deg, #f3cece, #b89d9d, #a99b9b, #f3cece); margin-left: 3%;"><b>Success is a virtuous circle</b><br>
-        In the realm of audit, success forms a virtuous circle wherein meticulous attention to detail, thorough analysis, and unwavering integrity pave the path for continuous improvement and trust-building. A successful audit not only ensures compliance with regulations and standards but also enhances organizational efficiency and effectiveness. <br>
-        <b>Excellence is imperative</b><br>
-       
-Excellence is not just desirable but imperative in the realm of audit. Auditing serves as the bedrock of trust in financial reporting, ensuring accuracy, transparency, and compliance with regulatory standards. Without excellence in auditing practices, stakeholders risk financial mismanagement, fraud, and systemic failures.  <br>
-<b>There's more than enough for everyone</b><br>
-       
-In the realm of audit, the principle that "there's more than enough for everyone" serves as a guiding beacon. Audits are not merely about uncovering deficiencies or discrepancies; they are a means to ensure fairness, transparency, and accountability within systems. </p>
+    <div class="row content">
+      <div class="col-lg-6">
+        <p>
+          It's simple to describe what we make: an app you can use to build trust, close deals, and generate more revenue. We built this app because we were tired of wasting hours of time—and spending hundreds of dollars—trying to make good looking audit reports that we could share with our prospects and clients.
+        </p>
+        <ul>
+          <li><i class="fa-solid fa-check-double"></i> Success is a virtuous circle</li>
+          <li><i class="fa-solid fa-check-double"></i> Excellence is imperative</li>
+          <li><i class="fa-solid fa-check-double"></i> There's more than enough for everyone</li>
+        </ul>
+        
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0">
+        <p > “You will get all you want in life, if you help enough other people get what they want”. And with our websites, you have a tool to do exactly that. Use the growth insights you'll find in our audit report to GIVE prospects and clients what they need to succeed online…. They'll come to know, like, trust, and recommend you. And then you'll be well on the way to success yourself.
+        </p>
+        <p id="hiddenContent" style="display: none;">
+          <b>Success is a virtuous circle</b><br>
+          In the realm of audit, success forms a virtuous circle wherein meticulous attention to detail, thorough analysis, and unwavering integrity pave the path for continuous improvement and trust-building. A successful audit not only ensures compliance with regulations and standards but also enhances organizational efficiency and effectiveness. <br>
+          <b>Excellence is imperative</b><br>
+         
+  Excellence is not just desirable but imperative in the realm of audit. Auditing serves as the bedrock of trust in financial reporting, ensuring accuracy, transparency, and compliance with regulatory standards. Without excellence in auditing practices, stakeholders risk financial mismanagement, fraud, and systemic failures.  <br>
+  <b>There's more than enough for everyone</b><br>
+         
+  In the realm of audit, the principle that "there's more than enough for everyone" serves as a guiding beacon. Audits are not merely about uncovering deficiencies or discrepancies; they are a means to ensure fairness, transparency, and accountability within systems. </p>
+        <a href="#" class="btn-learn-more" id="learnMoreButton">Learn More</a>
+      </div>
     </div>
   </div>
+</section>
+
+
+  <!-- Modal -->
+
     
   </section>
   <section id="why-us" class="why-us section-bg">
@@ -302,40 +272,21 @@ In the realm of audit, the principle that "there's more than enough for everyone
 
         </div>
 
-        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url({% static 'images/audit.avif' %});' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+        <div class="col-lg-4 align-items-stretch order-1 order-lg-2 img" style='background-image: url({% static 'images/audit.avif' %});' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
       </div>
 
     </div>
   </section>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Get the modal element
-      var modal = document.getElementById("myModal");
-
-      // Get the Learn More link
-      var learnMoreLink = document.querySelector(".btn-learn-more");
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks on the Learn More link, open the modal
-      learnMoreLink.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        modal.style.display = "block";
-      });
-
-      // When the user clicks on <span> (x), close the modal
-      span.addEventListener("click", function() {
-        modal.style.display = "none";
-      });
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.addEventListener("click", function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      });
+    document.getElementById('learnMoreButton').addEventListener('click', function() {
+      var hiddenContent = document.getElementById('hiddenContent');
+      if (hiddenContent.style.display === 'none') {
+        hiddenContent.style.display = 'block';
+      } else {
+        hiddenContent.style.display = 'none';
+      }
     });
   </script>
+  
 
 {% endblock %}
