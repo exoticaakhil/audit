@@ -116,6 +116,9 @@
     }
     /* Add this CSS to style the active link with an underline */
 
+.navbar-nav .nav-item.active {
+      background-color: #ffcc00; /* Change to your desired color */
+    }
 
 </style>
 
@@ -133,8 +136,9 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      
         <ul class="navbar-nav ml-auto" id="navbarLinks">
-            <li class="nav-item">
+            <li class="nav-item  ">
                 <a class="nav-link" href="{% url 'features' %}" style="font-family: Cursive;">Features</a>
             </li>
             <li class="nav-item">
@@ -143,9 +147,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'about' %}" style="font-family: Cursive;">About</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'contactus' %}" style="font-family: Cursive;">Contact</a>
-            </li>
+        
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: Cursive;">
                     Register
@@ -155,9 +157,13 @@
                     <a class="dropdown-item" href="{% url 'login' %}">Login</a>
                 </div>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contactus' %}" style="font-family: Cursive;">Contact</a>
+          </li>
+            <li></li>
         </ul>
     </div>
-</nav>
+  </nav>
 
 
 
@@ -222,25 +228,34 @@
         </script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
-          // Get all navbar links
-          const navbarLinks = document.querySelectorAll('.navbar-nav .nav-link');
-      
-          // Add click event listener to each link
-          navbarLinks.forEach(link => {
-              link.addEventListener('click', function() {
-                  // Remove underline from previously active link
-                  const activeLink = document.querySelector('.navbar-nav .nav-link.active');
-                  if (activeLink) {
-                      activeLink.classList.remove('active');
-                  }
-      
-                  // Add underline to clicked link
-                  this.classList.add('active');
-              });
-          });
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarLinks = document.querySelectorAll(".navbar-nav .nav-item");
+
+  navbarLinks.forEach(function(navbarLink) {
+    navbarLink.addEventListener("click", function() {
+      // Remove "active" class from all items
+      navbarLinks.forEach(function(item) {
+        item.classList.remove("active");
+      });
+      // Add "active" class to the clicked item
+      navbarLink.classList.add("active");
+      // Save the id of the clicked item to localStorage
+      localStorage.setItem("activeNavItem", navbarLink.id);
+    });
+  });
+
+  // Retrieve the id of the active item from localStorage and add "active" class to it
+  const activeNavItem = localStorage.getItem("activeNavItem");
+  if (activeNavItem) {
+    const activeItem = document.getElementById(activeNavItem);
+    if (activeItem) {
+      activeItem.classList.add("active");
+    }
+  }
+});
+
       </script>
-      
-      
-      
+        
+
 </body>
 </html>
